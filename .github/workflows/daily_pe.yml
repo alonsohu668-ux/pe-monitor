@@ -29,6 +29,7 @@ jobs:
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
           WECHAT_SCTKEY: ${{ secrets.WECHAT_SCTKEY }}
           NOTIFY_MODE: ${{ secrets.NOTIFY_MODE || 'full' }}
+          PE_TEST_VALUE: ${{ secrets.PE_TEST_VALUE }}
         run: python pe_monitor.py
 
       - name: Commit data
