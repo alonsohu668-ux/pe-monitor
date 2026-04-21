@@ -701,9 +701,13 @@ def main():
         config["notify_mode"] = args.mode
 
     # 获取C值
+    test_env = os.getenv("PE_TEST_VALUE")
     if args.test is not None:
         c = args.test
         print(f"\n🧪 [测试模式] 手动输入 C = {c}")
+    elif test_env:
+        c = float(test_env)
+        print(f"\n🧪 [测试模式] 环境变量 PE_TEST_VALUE = {c}")
     else:
         print(f"\n🌐 正在抓取 {SCRAP_URL} ...")
         c = scrape_pe()
