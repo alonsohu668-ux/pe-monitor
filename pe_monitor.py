@@ -418,36 +418,50 @@ def process_daily(c, state):
     返回:
         (signal, should_send) 或 (None, False)
     """
-    # 检查是否已有被持有的过渡信号
+    # 先计算今天的真实信号
+    signal = calc_signal(c, state)
+
+    # 清除已过期的持有信号
     held_signal = state.get("held_signal")
     held_until = state.get("held_until")
-
     if held_signal and held_until:
         try:
             until = date.fromisoformat(held_until)
-            if date.today() <= until:
-                # 仍在持有期内，继续发送该信号
-                logger.info(f"持有信号 {held_signal} 有效至 {held_until}")
-                return held_signal, True
-            else:
-                # 持有期结束，清除
+            if date.today() > until:
                 state["held_signal"] = None
                 state["held_until"] = None
+                held_signal = None
         except (ValueError, TypeError):
             state["held_signal"] = None
             state["held_until"] = None
+            held_signal = None
 
-    # 计算新信号
-    signal = calc_signal(c, state)
-
-    if signal == "v":
+    # 如果今天有新信号，优先用新信号（中断持有）
+    if signal != "v":
+        logger.info(f"今日信号 {signal}，覆盖持有信号 {held_signal}")
+        state["held_signal"] = None
+        state["held_until"] = None
+    elif held_signal:
+        # 今天无信号，但持有信号还在有效期内，继续发送
+        try:
+            until = date.fromisoformat(held_until)
+            if date.today() <= until:
+                logger.info(f"持有信号 {held_signal} 有效至 {held_until}")
+                signal = held_signal
+            else:
+                state["held_signal"] = None
+                state["held_until"] = None
+                return None, False
+        except (ValueError, TypeError):
+            return None, False
+    else:
         return None, False
 
+    # 更新连续天数
     last_signal = state.get("last_signal")
     consecutive = state.get("consecutive_days", 0)
 
     if signal != last_signal:
-        # 新信号，重置计数
         consecutive = 1
     else:
         consecutive += 1
