@@ -1,0 +1,37 @@
+# 沪深300市盈率监控 - 配置文件
+# 复制此文件为 config.yaml 并填入你的配置
+
+# ========== 通知模式 ==========
+# full: 消息中包含C值  |  simple: 消息中不含C值
+notify_mode: full
+
+# ========== 飞书通知 ==========
+# 在飞书群中添加「自定义机器人」获取 webhook URL
+feishu:
+  enabled: true
+  webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/你的KEY"
+
+# ========== 微信通知 (Server酱) ==========
+# 1. 打开 https://sct.ftqq.com
+# 2. 微信扫码登录
+# 3. 绑定微信公众号并获取 SendKey
+# 免费版每天可发5条消息
+wechat:
+  enabled: true
+  sctkey: "SCT你的KEY"
+
+# ========== 邮件通知 ==========
+email:
+  enabled: false
+  smtp_server: "smtp.qq.com"      # QQ邮箱用 smtp.qq.com，Gmail 用 smtp.gmail.com
+  smtp_port: 465                   # SSL端口
+  smtp_user: "your_email@qq.com"
+  smtp_password: "your_auth_code"  # QQ邮箱用授权码，不是登录密码
+  recipients:
+    - "recipient@example.com"
+
+# ========== GitHub Actions 环境变量（可选）==========
+# 如果用 GitHub Actions 部署，也可以通过 Secrets 设置:
+#   FEISHU_WEBHOOK  → 飞书 webhook URL
+#   WECHAT_SCTKEY   → Server酱 SendKey
+#   NOTIFY_MODE     → full / simple
