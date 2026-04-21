@@ -6,10 +6,10 @@
     }
   ],
   "max_c": 21.12,
-  "last_signal": "f",
+  "last_signal": "a",
   "last_signal_date": "2026-04-21",
   "consecutive_days": 1,
-  "held_signal": "f",
-  "held_until": "2026-04-22",
+  "held_signal": null,
+  "held_until": null,
   "fired": {}
 }
