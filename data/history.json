@@ -6,14 +6,14 @@
     },
     {
       "date": "2026-04-22",
-      "value": 10.0
+      "value": 21.2
     }
   ],
-  "max_c": 21.12,
-  "last_signal": "a",
+  "max_c": 21.2,
+  "last_signal": "f",
   "last_signal_date": "2026-04-22",
-  "consecutive_days": 2,
-  "held_signal": null,
-  "held_until": null,
+  "consecutive_days": 1,
+  "held_signal": "f",
+  "held_until": "2026-04-23",
   "fired": {}
 }
