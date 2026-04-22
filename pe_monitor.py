@@ -716,10 +716,12 @@ def main():
 
     # 获取C值
     test_env = os.getenv("PE_TEST_VALUE")
+    github_actions = os.getenv("GITHUB_ACTIONS") == "true"
+
     if args.test is not None:
         c = args.test
         print(f"\n🧪 [测试模式] 手动输入 C = {c}")
-    elif test_env:
+    elif test_env and not github_actions:
         c = float(test_env)
         print(f"\n🧪 [测试模式] 环境变量 PE_TEST_VALUE = {c}")
     else:
