@@ -3,12 +3,16 @@
     {
       "date": "2026-04-21",
       "value": 10.0
+    },
+    {
+      "date": "2026-04-22",
+      "value": 10.0
     }
   ],
   "max_c": 21.12,
   "last_signal": "a",
-  "last_signal_date": "2026-04-21",
-  "consecutive_days": 1,
+  "last_signal_date": "2026-04-22",
+  "consecutive_days": 2,
   "held_signal": null,
   "held_until": null,
   "fired": {}
