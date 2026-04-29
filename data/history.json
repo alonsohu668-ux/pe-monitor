@@ -23,9 +23,13 @@
     {
       "date": "2026-04-28",
       "value": 21.04
+    },
+    {
+      "date": "2026-04-29",
+      "value": 21.55
     }
   ],
-  "max_c": 21.37,
+  "max_c": 21.55,
   "last_signal": "f",
   "last_signal_date": "2026-04-23",
   "consecutive_days": 2,
