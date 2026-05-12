@@ -55,9 +55,13 @@
     {
       "date": "2026-05-11",
       "value": 22.86
+    },
+    {
+      "date": "2026-05-12",
+      "value": 22.9
     }
   ],
-  "max_c": 22.86,
+  "max_c": 22.9,
   "last_signal": "f",
   "last_signal_date": "2026-04-23",
   "consecutive_days": 2,
