@@ -287,6 +287,10 @@
     {
       "date": "2026-07-30",
       "value": 20.98
+    },
+    {
+      "date": "2026-07-31",
+      "value": 21.07
     }
   ],
   "max_c": 22.9,
@@ -295,7 +299,5 @@
   "consecutive_days": 2,
   "held_signal": null,
   "held_until": null,
-  "fired": {
-    "q": "2026-07-27"
-  }
+  "fired": {}
 }
