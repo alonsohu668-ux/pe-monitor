@@ -523,12 +523,16 @@
     {
       "date": "2026-10-21",
       "value": 20.29
+    },
+    {
+      "date": "2026-10-22",
+      "value": 20.0
     }
   ],
   "max_c": 22.9,
   "last_signal": "d",
-  "last_signal_date": "2026-10-12",
-  "consecutive_days": 2,
+  "last_signal_date": "2026-10-22",
+  "consecutive_days": 3,
   "held_signal": null,
   "held_until": null,
   "fired": {
