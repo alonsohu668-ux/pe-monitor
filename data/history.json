@@ -611,12 +611,16 @@
     {
       "date": "2026-11-20",
       "value": 19.79
+    },
+    {
+      "date": "2026-11-23",
+      "value": 19.59
     }
   ],
   "max_c": 22.9,
   "last_signal": "d",
-  "last_signal_date": "2026-11-20",
-  "consecutive_days": 7,
+  "last_signal_date": "2026-11-23",
+  "consecutive_days": 8,
   "held_signal": null,
   "held_until": null,
   "fired": {
